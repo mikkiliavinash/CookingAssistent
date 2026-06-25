@@ -1,0 +1,22 @@
+# Virtual Environment
+.venv/
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+
+# VS Code
+.vscode/
+
+# Streamlit
+.streamlit/
+
+
+test_*.py
+old_app.py
