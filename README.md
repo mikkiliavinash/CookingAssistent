@@ -16,7 +16,7 @@ It also maintains conversation context using LangGraph's in-memory checkpointing
 
 ## 📂 GitHub Repository
 
-YOUR_GITHUB_REPOSITORY_LINK
+mikkiliavinash/CookingAssistent
 
 ---
 
@@ -83,7 +83,7 @@ CookingAssistent/
 Clone the repository:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+git clone mikkiliavinash/CookingAssistent
 ```
 
 Go to the project directory:
@@ -146,52 +146,6 @@ The application will be available at:
 ```
 http://localhost:8501
 ```
-
----
-
-## 📸 Screenshots
-
-Add screenshots of:
-
-* Home screen
-* Chat conversation
-* Recipe generation
-* Ingredient substitution example
-
-Store them inside:
-
-```
-screenshots/
-```
-
-Example:
-
-```markdown
-![Home](screenshots/home.png)
-
-![Recipe](screenshots/recipe.png)
-```
-
----
-
-## 🔮 Future Improvements
-
-* Streaming responses
-* Persistent chat history
-* Voice input
-* Image-based ingredient recognition
-* Nutrition estimation
-* Multi-language support
-* User authentication
-* Recipe bookmarking
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 ## 👨‍💻 Author
 
