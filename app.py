@@ -1,19 +1,18 @@
 import streamlit as st
-import traceback
+from pprint import pprint
 
 from langchain.messages import HumanMessage
-
 from agent import cooking_agent
 
-st.set_page_config(
-    page_title="Chef Buddy",
-    page_icon="🍳"
-)
+st.set_page_config(page_title="Chef Buddy", page_icon="🍳")
 
 st.title("🍳 Chef Buddy")
 
-st.write("Ask me any cooking question!")
+# Create one thread per browser session
+if "thread_id" not in st.session_state:
+    st.session_state.thread_id = "1"
 
+# UI chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
@@ -26,25 +25,27 @@ prompt = st.chat_input("Ask a cooking question...")
 
 if prompt:
 
-    # Display user message
+    # Show user message
     with st.chat_message("user"):
         st.markdown(prompt)
 
     st.session_state.messages.append(
         {
-            "role":"user",
-            "content":prompt
+            "role": "user",
+            "content": prompt
         }
     )
-
-    # Agent response
+    config = { "configurable": {  "thread_id": st.session_state.thread_id}}
+    # Call the agent
     result = cooking_agent.invoke(
         {
-            "messages":[
+            "messages": [
                 HumanMessage(content=prompt)
             ]
-        }
+        },
+        config=config
     )
+
 
     response = result["messages"][-1].content
 
@@ -56,7 +57,7 @@ if prompt:
 
     st.session_state.messages.append(
         {
-            "role":"assistant",
-            "content":response
+            "role": "assistant",
+            "content": response
         }
     )
